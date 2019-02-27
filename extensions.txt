@@ -1,0 +1,12 @@
+dbaeumer.vscode-eslint
+donjayamanne.githistory
+dsznajder.es7-react-js-snippets
+idbartosz.darkpp-italic
+mohsen1.prettify-json
+ms-python.python
+msjsdiag.debugger-for-chrome
+PeterJausovec.vscode-docker
+rafwilinski.serverless-vscode-snippets
+siegebell.prettify-symbols-mode
+vscoss.vscode-ansible
+Zignd.html-css-class-completion

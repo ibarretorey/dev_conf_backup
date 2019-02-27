@@ -1,0 +1,9 @@
+{
+    "terminal.integrated.rendererType": "dom",
+    "window.zoomLevel": 0,
+    "git.autofetch": true,
+    "workbench.sideBar.location": "left",
+    "editor.fontFamily": "Fira Code iScript",
+    "editor.fontLigatures": true,
+    "workbench.colorTheme": "Dark++ Italic",
+}
