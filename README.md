@@ -60,12 +60,12 @@ Finalizada la instalación de las extensiones, reiniciar vscode y ya estamos en 
 
 #### Configurar las fuentes
 
-1. Instalar fuentes en vscode: entrar a la carpeta [FiraCodeiScript](./VsCodeFont/FiraCodeiScript/) en `./VsCodeFont/FiraCodeiScript` y luego ejecutar
+1. Instalar fuentes en vscode: entrar a la carpeta [VsCodeFont](./VsCodeFont/) en `./VsCodeFont/FiraCodeiScript` y luego ejecutar
 
 ```bash
-copy ./FiraCodeiScript /usr/share/fonts # Para copiar las fuentes en el equipo
-fc-cache -f -v # para instalar las fuentes, puede tomar unos minutos
+sudo cp  -r ./FiraCodeiScript /usr/share/fonts # Para copiar las fuentes en el equipo
+sudo fc-cache -f -v # para instalar las fuentes, puede tomar unos minutos
 ```
 
 **Seleccionar la fuente:**
-En visual studio code presionar `crtl+shift+p` y seleccionar `=>` Preferences: Color Theme `=>` Dark++ Italic
+En visual studio code presionar `crtl+shift+p` y seleccionar `=>` Preferences: Color Theme `=>` Dark++ Italic, reinciar vscode y qeudo listo.
