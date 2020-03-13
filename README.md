@@ -1,4 +1,4 @@
-# Instalar mi ubuntu 0 => 100
+# Instalar entorno en ubuntu 0 => 100
 
 Mas que una guía es un recordatorio de que cosas instalar, algunos archivos de configuración que conviene tenerlos en un repo mio por la dudosa estabilidad de la procedencia y una ayuda de memoria de donde se encuentran mis configuraciones y software para instalar mi devPc a mi gusto y de forma rápida y practica
 
@@ -18,10 +18,15 @@ Instalar git
 Para almacenar nuestras credenciales en git ejecutar:
 
 ```bash
-git config --global credential.helper store # Si queremos que las credenciales queden en el disco y no las vuelva a solicitar
+git config --global credential.helper store # Si queremos que las
+# credenciales queden en el disco y no las vuelva a solicitar
 # >>> ó <<<
-git config --global credential.helper 'cache --timeout=<segundos>' # Si no queremos almacenar las credenciales en el disco y queremos que las recuerde por la cantidad de <segundos> indicados, esta opción esta buena para ponerle unas cuantas horas y que las pida cada tanto o al comenzar el dia.
+git config --global credential.helper 'cache --timeout=<segundos>'
+# Si no queremos almacenar las credenciales en el disco y queremos que
+# las recuerde por la cantidad de <segundos> indicados, esta opción esta buena
+# para ponerle unas cuantas horas y que las pida cada tanto o al comenzar el dia.
 ```
+
 Luego para configurar el nombre de usuario/password y el email, tipear:
 
 ```bash
@@ -34,15 +39,22 @@ git config --global user.email "yourEmail@yourDomain"
 
 1. Luego de instalar VsCode, abrir el entorno e ir al menu  `vew => extensiones` , luego buscar la extension  `Settings Sync` e instalarla.
 2. Sincronizar configuraciones de VsCode.
+
+Si luego de instalada la extension de `settings sync` no se abrio la pantalla inicial de la misma, presionar:
 **presionar**
 `ctr+shift+d`
 **ó**
 `ctl+shift+p`
 y luego seleccionar la opción
 **sync: Download Settings**
-1. Ir a git, y dentro ir a => **profile** => **setting** => **depeloper settings**, generar un nuevo token para poder descargar y subir las configuraciones de vscode desde esa Pc ahora y en el futuro, copiar el token generado y pegarlo en vscode. Luego pegar el ID `dabbdddb1340119ae3181cb3ec90abd4` del gist donde están guardadas las configuraciones, the id is de last endpoint.
 
-2. Instalar fuentes en vscode: entrar a la carpeta [FiraCodeiScript](./VsCodeFont/FiraCodeiScript/) en `./VsCodeFont/FiraCodeiScript` y luego ejecutar
+se debería abrir la pagina de la extension, luego hacer click en login con github y luego de hecho el login con la cuenta de sincronización en mi caso `ibarretorey`, volver a vscode y ahi deberian aparecer los gist de esa cuenta donde uno de ellos es la configuracion, en mi caso el gist se llama:
+
+`Visual Studio Code Settings Sync Gist` y el id es `dabbdddb1340119ae3181cb3ec90abd4`
+
+al hacer click en `close tab` y se comenzaran a instalar todas las extensiones, despues debemos reinicar vscode y ya estamos en condiciones de configurar las fuentes.
+
+1. Instalar fuentes en vscode: entrar a la carpeta [FiraCodeiScript](./VsCodeFont/FiraCodeiScript/) en `./VsCodeFont/FiraCodeiScript` y luego ejecutar
 
 ```bash
 copy ./FiraCodeiScript /usr/share/fonts # Para copiar las fuentes en el equipo
