@@ -9,6 +9,7 @@ Mas que una guía es un recordatorio de que cosas instalar, algunos archivos de 
 3. [VsCode](https://code.visualstudio.com/docs/setup/linux)
 4. [Inicializar VsCode](###-Inicializar-VsCode)
 5. [Terimator](###-Instalar-y-configurar-Terminator)
+
 ### Instalar git y configurar credenciales
 
 Instalar git
@@ -96,3 +97,56 @@ Para configurar terminator pararse dentro de la carpeta [Terminator](./Terminato
 ```bash
 cp -r ./* ~/.config/terminator/
 ```
+
+## Examples
+
+The prompt may look like the following:
+
+![Example prompt](gitprompt.png)
+
+* ``(master↑3|✚1)``: on branch ``master``, ahead of remote by 3 commits, 1 file changed but not staged
+* ``(status|●2)``: on branch ``status``, 2 files staged
+* ``(master|✚7…)``: on branch ``master``, 7 files changed, some files untracked
+* ``(master|✖2✚3)``: on branch ``master``, 2 conflicts, 3 files changed
+* ``(master|⚑2)``: on branch ``master``, 2 stash entries
+* ``(experimental↓2↑3|✔)``: on branch ``experimental``; your branch has diverged by 3 commits, remote by 2 commits; the repository is otherwise clean
+* ``(:70c2952|✔)``: not on any branch; parent commit has hash ``70c2952``; the repository is otherwise clean
+
+###  Prompt Structure
+
+#### Instalacion
+
+```sh
+sudo cp -r ./bash-git-prompt ~/bash-git-prompt
+```
+
+Agregar lo siguiente al arrchivo  `~/.bashrc`:
+```
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source $HOME/.bash-git-prompt/gitprompt.sh
+fi
+```
+
+
+The symbols are as follows:
+
+- Local Status Symbols
+  - ``✔``: repository clean
+  - ``●n``: there are ``n`` staged files
+  - ``✖n``: there are ``n`` files with merge conflicts
+  - ``✖-n``: there are ``n`` staged files waiting for removal
+  - ``✚n``: there are ``n`` changed but *unstaged* files
+  - ``…n``: there are ``n`` untracked files
+  - ``⚑n``: there are ``n`` stash entries
+- Upstream branch
+  - Shows the remote tracking branch
+  - Disabled by default
+  - Enable by setting GIT_PROMPT_SHOW_UPSTREAM=1
+- Branch Tracking Symbols
+  - ``↑n``: ahead of remote by ``n`` commits
+  - ``↓n``: behind remote by ``n`` commits
+  - ``↓m↑n``: branches diverged, other by ``m`` commits, yours by ``n`` commits
+  - ``L``: local branch, not remotely tracked
+- Branch Symbol:<br />
+  	When the branch name starts with a colon ``:``, it means it's actually a hash, not a branch (although it should be pretty clear, unless you name your branches like hashes :-)
