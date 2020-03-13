@@ -107,12 +107,13 @@ cp -r ./* ~/.config/terminator/
 Copiar la carpeta bash-git-prompt al directorio local en `home`
 
 ```sh
-sudo cp -r ./bash-git-prompt ~/bash-git-prompt
+sudo cp -r ./bash-git-prompt ~/.bash-git-prompt
 ```
 
 Agregar el siguiente script a `~/.bashrc` para que si nos encontramos dentro de un directorio con git nos agregue el status al prompt:
 
 ```bash
+# Conifuracion de bash prompt
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     GIT_PROMPT_ONLY_IN_REPO=1
     source $HOME/.bash-git-prompt/gitprompt.sh
