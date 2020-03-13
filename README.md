@@ -95,5 +95,4 @@ Para configurar terminator pararse dentro de la carpeta [Terminator](./Terminato
 
 ```bash
 cp -r ./* ~/.config/terminator/
-
 ```
