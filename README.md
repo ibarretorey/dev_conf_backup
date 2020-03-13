@@ -8,7 +8,7 @@ Mas que una guía es un recordatorio de que cosas instalar, algunos archivos de 
 2. [git](https://git-scm.com/download/linux)
 3. [VsCode](https://code.visualstudio.com/docs/setup/linux)
 4. [Inicializar VsCode](###-Inicializar-VsCode)
-5. [Terimator](###-Instalar-Terminator)
+5. [Terimator](###-Instalar-y-configurar-Terminator)
 ### Instalar git y configurar credenciales
 
 Instalar git
@@ -70,7 +70,10 @@ sudo fc-cache -f -v # para instalar las fuentes, puede tomar unos minutos
 **Seleccionar la fuente:**
 En visual studio code presionar `crtl+shift+p` y seleccionar `=>` Preferences: Color Theme `=>` Dark++ Italic, reinciar vscode y qeudo listo.
 
-### Instalar terminator
+### Instalar y configurar terminator
+
+
+#### Instalación
 
 Para instalar terminator seguir el siguiente paso a paso
 
@@ -84,4 +87,13 @@ sudo apt-get update
 
 ```bash
 sudo apt-get install terminator
+```
+
+#### Configuración
+
+Para configurar terminator pararse dentro de la carpeta [Terminator](./Terminator) `./Terminator` y ejecutar
+
+```bash
+cp -r ./* ~/.config/terminator/
+
 ```
