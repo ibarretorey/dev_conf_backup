@@ -37,6 +37,8 @@ git config --global user.email "yourEmail@yourDomain"
 
 ### Inicializar VsCode
 
+#### Instalar extensiones
+
 1. Luego de instalar VsCode, abrir el entorno e ir al menu  `vew => extensiones` , luego buscar la extension  `Settings Sync` e instalarla.
 2. Sincronizar configuraciones de VsCode.
 
@@ -48,11 +50,15 @@ Si luego de instalada la extension de `settings sync` no se abrio la pantalla in
 y luego seleccionar la opción
 **sync: Download Settings**
 
-se debería abrir la pagina de la extension, luego hacer click en login con github y luego de hecho el login con la cuenta de sincronización en mi caso `ibarretorey`, volver a vscode y ahi deberian aparecer los gist de esa cuenta donde uno de ellos es la configuracion, en mi caso el gist se llama:
+se debería abrir la pagina de la extension, en el caso de querer:
 
+- **administrar de la configuración de vscode:** hacer click en login con github y luego de hecho el login con la cuenta de sincronización, en mi caso `ibarretorey`, volver a vscode y ahi deberían aparecer los gists de esa cuenta donde uno de ellos es la configuración, en mi caso el gist se llama:
 `Visual Studio Code Settings Sync Gist` y el id es `dabbdddb1340119ae3181cb3ec90abd4`
+- **descargar la configuracion:**  hacer click en Download Public Gist y luego ingresar el id del Gist, en nuestro caso `dabbdddb1340119ae3181cb3ec90abd4`
 
-al hacer click en `close tab` y se comenzaran a instalar todas las extensiones, despues debemos reinicar vscode y ya estamos en condiciones de configurar las fuentes.
+Finalizada la instalación de las extensiones, reiniciar vscode y ya estamos en condiciones de configurar las fuentes.
+
+#### Configurar las fuentes
 
 1. Instalar fuentes en vscode: entrar a la carpeta [FiraCodeiScript](./VsCodeFont/FiraCodeiScript/) en `./VsCodeFont/FiraCodeiScript` y luego ejecutar
 
@@ -61,6 +67,5 @@ copy ./FiraCodeiScript /usr/share/fonts # Para copiar las fuentes en el equipo
 fc-cache -f -v # para instalar las fuentes, puede tomar unos minutos
 ```
 
-## Seleccionar la guente
-
-En visual studio code presionar `=> crtl+shift+p` y seleccionar => Preferences: Color Theme => Dark++ Italic
+**Seleccionar la fuente:**
+En visual studio code presionar `crtl+shift+p` y seleccionar `=>` Preferences: Color Theme `=>` Dark++ Italic
