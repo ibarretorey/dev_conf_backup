@@ -1,34 +1,32 @@
-# VSCODE __INIT__
+# Instalar mi ubuntu 0 => 100
 
-1. After that you install vscode, open vscode, go to extension, serch and install the extension  settings sync.
-2. Sync settings of vs code.
-**press**
+Mas que una guía es un recordatorio de que cosas instalar, algunos archivos de configuración que conviene tenerlos en un repo mio por la dudosa estabilidad de la procedencia y una ayuda de memoria de donde se encuentran mis configuraciones y software para instalar mi devPc a mi gusto y de forma rápida y practica
+
+## Software necesario
+
+1. [Google chrome](https://www.google.com.mx/intl/es-419/chrome/?brand=CHBD&gclid=Cj0KCQjw3qzzBRDnARIsAECmryqQ7s8n6O1T4Sk7xO3EsdhEymfydLbIpk33SQ-heFggNLyB1YjWPqkaApLmEALw_wcB&gclsrc=aw.ds)
+2. [VsCode](https://code.visualstudio.com/docs/setup/linux)
+3. [Inicializar VsCode](###-Inicializar-VsCode)
+
+### Inicializar VsCode
+
+1. Luego de instalar VsCode, abrir el entorno e ir al menu  `vew => extensiones` , luego buscar la extension  `Settings Sync` e instalarla.
+2. Sincronizar configuraciones de VsCode.
+**presionar**
 `ctr+shift+d`
-**or**
+**ó**
 `ctl+shift+p`
+y luego seleccionar la opción
 **sync: Download Settings**
-3. Go to git, **profile** => **setting** => **depeloper settings**, regenerate and copy settigns token, insert token in vscode, after copy gist id from de settings gist in de url of gist https://gist.github.com/ibarretorey/dabbdddb1340119ae3181cb3ec90abd4 , the id is de last endpoint.
+1. Ir a git, y dentro ir a => **profile** => **setting** => **depeloper settings**, generar un nuevo token para poder descargar y subir las configuraciones de vscode desde esa Pc ahora y en el futuro, copiar el token generado y pegarlo en vscode. Luego pegar el ID `dabbdddb1340119ae3181cb3ec90abd4` del gist donde están guardadas las configuraciones, the id is de last endpoint.
 
-4. Instal font for vscode: within a folder that contain FiraCodeiScript, write:
-
-```bash
-copy ./FiraCodeiScript /usr/share/fonts
-```
-
-Install font:
+2. Instalar fuentes en vscode: entrar a la carpeta [FiraCodeiScript](./VsCodeFont/FiraCodeiScript/) en `./VsCodeFont/FiraCodeiScript` y luego ejecutar
 
 ```bash
-fc-cache -f -v
+copy ./FiraCodeiScript /usr/share/fonts # Para copiar las fuentes en el equipo
+fc-cache -f -v # para instalar las fuentes, puede tomar unos minutos
 ```
 
-## Install
+## Seleccionar la guente
 
-In visual studio code:
-
-press: crtl+shift+p
-write theme
-select => Preferences: Color Theme => Dark++ Italic
-
-Download or clone this repository and install the fonts on your system.
-
-In your editor of choice set the font to `Fira Code iScript`.  Also, ensure that the current theme and syntax highlighting utilize italic.
+En visual studio code presionar `=> crtl+shift+p` y seleccionar => Preferences: Color Theme => Dark++ Italic
