@@ -22,6 +22,13 @@ git config --global credential.helper store # Si queremos que las credenciales q
 # >>> ó <<<
 git config --global credential.helper 'cache --timeout=<segundos>' # Si no queremos almacenar las credenciales en el disco y queremos que las recuerde por la cantidad de <segundos> indicados, esta opción esta buena para ponerle unas cuantas horas y que las pida cada tanto o al comenzar el dia.
 ```
+Luego para configurar el nombre de usuario/password y el email, tipear:
+
+```bash
+git config --global user.name "your username"
+git config --global user.password "your password"
+git config --global user.email "yourEmail@yourDomain"
+```
 
 ### Inicializar VsCode
 
