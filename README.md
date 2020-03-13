@@ -5,8 +5,23 @@ Mas que una guía es un recordatorio de que cosas instalar, algunos archivos de 
 ## Software necesario
 
 1. [Google chrome](https://www.google.com.mx/intl/es-419/chrome/?brand=CHBD&gclid=Cj0KCQjw3qzzBRDnARIsAECmryqQ7s8n6O1T4Sk7xO3EsdhEymfydLbIpk33SQ-heFggNLyB1YjWPqkaApLmEALw_wcB&gclsrc=aw.ds)
-2. [VsCode](https://code.visualstudio.com/docs/setup/linux)
-3. [Inicializar VsCode](###-Inicializar-VsCode)
+2. [git](https://git-scm.com/download/linux)
+3. [VsCode](https://code.visualstudio.com/docs/setup/linux)
+4. [Inicializar VsCode](###-Inicializar-VsCode)
+
+### Instalar git y configurar credenciales
+
+Instalar git
+
+[git](https://git-scm.com/download/linux)
+
+Para almacenar nuestras credenciales en git ejecutar:
+
+```bash
+git config --global credential.helper store # Si queremos que las credenciales queden en el disco y no las vuelva a solicitar
+# >>> ó <<<
+git config --global credential.helper 'cache --timeout=<segundos>' # Si no queremos almacenar las credenciales en el disco y queremos que las recuerde por la cantidad de <segundos> indicados, esta opción esta buena para ponerle unas cuantas horas y que las pida cada tanto o al comenzar el dia.
+```
 
 ### Inicializar VsCode
 
