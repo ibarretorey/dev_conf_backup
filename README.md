@@ -9,6 +9,7 @@ Mas que una guía es un recordatorio de que cosas instalar, algunos archivos de 
 3. [VsCode](https://code.visualstudio.com/docs/setup/linux)
 4. [Inicializar VsCode](###-Inicializar-VsCode)
 5. [Terimator](###-Instalar-y-configurar-Terminator)
+6. [Agregar git status al prompt](###-Agregar-git-status-al-prompt)
 
 ### Instalar git y configurar credenciales
 
@@ -95,14 +96,35 @@ sudo apt-get install terminator
 Para configurar terminator pararse dentro de la carpeta [Terminator](./Terminator) `./Terminator` y ejecutar
 
 ```bash
+mkdir ~/.config/terminator
 cp -r ./* ~/.config/terminator/
 ```
 
-## Examples
+### Agregar git status al prompt
 
-The prompt may look like the following:
+#### Instalación
 
-![Example prompt](gitprompt.png)
+Copiar la carpeta bash-git-prompt al directorio local en `home`
+
+```sh
+sudo cp -r ./bash-git-prompt ~/bash-git-prompt
+```
+
+Agregar el siguiente script a `~/.bashrc` para que si nos encontramos dentro de un directorio con git nos agregue el status al prompt:
+
+```bash
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source $HOME/.bash-git-prompt/gitprompt.sh
+fi
+```
+
+
+#### Ejemplos
+
+El prompt se vera como se detalla a continuacion:
+
+![Example prompt](./bash-git-prompt/gitprompt.png)
 
 * ``(master↑3|✚1)``: on branch ``master``, ahead of remote by 3 commits, 1 file changed but not staged
 * ``(status|●2)``: on branch ``status``, 2 files staged
@@ -112,24 +134,7 @@ The prompt may look like the following:
 * ``(experimental↓2↑3|✔)``: on branch ``experimental``; your branch has diverged by 3 commits, remote by 2 commits; the repository is otherwise clean
 * ``(:70c2952|✔)``: not on any branch; parent commit has hash ``70c2952``; the repository is otherwise clean
 
-###  Prompt Structure
-
-#### Instalacion
-
-```sh
-sudo cp -r ./bash-git-prompt ~/bash-git-prompt
-```
-
-Agregar lo siguiente al arrchivo  `~/.bashrc`:
-```
-if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
-    GIT_PROMPT_ONLY_IN_REPO=1
-    source $HOME/.bash-git-prompt/gitprompt.sh
-fi
-```
-
-
-The symbols are as follows:
+Los simbolos son los siguientes:
 
 - Local Status Symbols
   - ``✔``: repository clean
