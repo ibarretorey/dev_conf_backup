@@ -94,6 +94,6 @@ sudo apt-get install terminator
 Para configurar terminator pararse dentro de la carpeta [Terminator](./Terminator) `./Terminator` y ejecutar
 
 ```bash
+mkdir ~/.config/terminator
 cp -r ./* ~/.config/terminator/
-
 ```
