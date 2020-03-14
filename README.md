@@ -10,7 +10,15 @@ Mas que una guía es un recordatorio de que cosas instalar, algunos archivos de 
 4. [Inicializar VsCode](###-Inicializar-VsCode)
 5. [Terimator](###-Instalar-y-configurar-Terminator)
 6. [Agregar git status al prompt](###-Agregar-git-status-al-prompt)
-
+7. [Spotify](https://www.spotify.com/uy/download/linux/)
+8. [Pyenv - manage python environments](######-Instalar-y-configurar-Pyenv)
+9. [Pyenv - configurar entorno local y global](####-Configurar-entornos-locales-y-globales)
+10. [Pyenv - configurar un entorno virtual](####-Usar-pyenv-con-virtualenv)
+11. [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+12. [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+13. [Docker-compose](https://docs.docker.com/compose/install/)
+14. [Kubernetes]()
+15. []()
 ### Instalar git y configurar credenciales
 
 Instalar git
@@ -54,7 +62,7 @@ y luego seleccionar la opción
 
 se debería abrir la pagina de la extension, en el caso de querer:
 
-- **administrar de la configuración de vscode:** hacer click en login con github y luego de hecho el login con la cuenta de sincronización, en mi caso `ibarretorey`, volver a vscode y ahi deberían aparecer los gists de esa cuenta donde uno de ellos es la configuración, en mi caso el gist se llama:
+- **administrar de la configuración de vscode:** hacer click en login con github y luego de hecho el login con la cuenta de sincronización, en mi caso `xxxrey`, volver a vscode y ahi deberían aparecer los gists de esa cuenta donde uno de ellos es la configuración, en mi caso el gist se llama:
 `Visual Studio Code Settings Sync Gist` y el id es `dabbdddb1340119ae3181cb3ec90abd4`
 - **descargar la configuracion:**  hacer click en Download Public Gist y luego ingresar el id del Gist, en nuestro caso `dabbdddb1340119ae3181cb3ec90abd4`
 
@@ -73,7 +81,6 @@ sudo fc-cache -f -v # para instalar las fuentes, puede tomar unos minutos
 En visual studio code presionar `crtl+shift+p` y seleccionar `=>` Preferences: Color Theme `=>` Dark++ Italic, reinciar vscode y qeudo listo.
 
 ### Instalar y configurar terminator
-
 
 #### Instalación
 
@@ -156,3 +163,111 @@ Los simbolos son los siguientes:
   - ``L``: local branch, not remotely tracked
 - Branch Symbol:<br />
   	When the branch name starts with a colon ``:``, it means it's actually a hash, not a branch (although it should be pretty clear, unless you name your branches like hashes :-)
+
+
+### Instalar y configurar Pyenv
+
+#### Instalar
+
+```bash
+# >>> instalar las dependencias necesarias para pyenv <<<
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+
+# >>> instalar pyenv <<<
+curl https://pyenv.run | bash
+#pyenv.run redirects to the install script in this repository and the invocation above is equivalent to:
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+```
+
+luego agregar a `~/.bashrc` las siguientes lineas:
+
+```bash
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
+reiniciar la bash y listo!
+
+#### Configurar entornos locales y globales
+
+```bash
+
+# Lista todas las versiones de python disponibles
+xxx@xxx:~$ pyenv install -l
+# Output >>>
+Available versions:
+  2.1.3
+  2.2.3
+  2.3.7
+  ...
+
+# Instala una version de python en este exemplo la 3.8.2
+xxx@lxxx:~$ pyenv install 3.8.2
+# Output >>>
+Downloading Python-3.8.2.tar.xz...
+-> https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz
+Installing Python-3.8.2...
+Installed Python-3.8.2 to /home/xxx/.pyenv/versions/3.8.2
+
+# Lista las versiones instaladas
+xxx@xxx:~$ pyenv versions
+# Output >>>
+* system (set by /home/xxx/.pyenv/version)
+  3.8.2
+# Indica la version de python configurada globalmente
+xxx@xxx:~$ pyenv global
+# Output >>>
+system
+# Indica la ubicación del interprete de python actual
+xxx@xxx:~$ pyenv which python
+# Output >>>
+/usr/bin/python
+# Selecciona una version de python para el directorio donde estamos parados
+xxx@xxx:~$ pyenv local 3.8.2
+# Vemos que en ese directorio la version es 3.8.2
+xxx@xxx:~$ python --version
+Python 3.8.2
+# y en cualquier otro directorio la version es la del sistema
+xxx@xxx:~$ cd .. && python --version
+Python 2.7.17
+xxx@xxx:/home$
+xxx@xxx:/home$ pyenv global 3.8.2
+xxx@xxx:/home$ cd xxx/Documents/
+xxx@xxx:~/Documents$ python --version
+Python 3.8.2
+```
+
+#### Usar pyenv con virtualenv
+
+```bash
+# Para crear un entorno
+pyenv virtualenv <python-version> <nombre-entorno>
+
+# Para activar un entorno
+pyenv activate <nombre-entorno>
+
+# Para desactivar un entorno
+pyenv deactivate <nombre-entorno>
+
+# Para eliminar un entorno creado
+pyenv uninstall <nombre-entorno>
+
+# <<<<<< EJEMPLO >>>>>>
+xxx@xxx:~$ pyenv virtualenv 3.8.2 my_venv
+# Output >>>
+Looking in links: /tmp/tmpy_2kz0fl
+Requirement already satisfied: setuptools in /home/ibarreto/.pyenv/versions/3.8.2/envs/my_venv/lib/python3.8/site-packages (41.2.0)
+Requirement already satisfied: pip in /home/ibarreto/.pyenv/versions/3.8.2/envs/my_venv/lib/python3.8/site-packages (19.2.3)
+xxx@xxx:~$ pyenv activate my_venv
+# Output >>>
+(my_venv) pyenv-virtualenv: prompt changing will be removed from future release. configure 'export PYENV_VIRTUALENV_DISABLE_PROMPT=1' to simulate the behavior. 
+xxx@xxx:~$ pyenv uninstall my_venv 
+# Output >>>
+pyenv-virtualenv: remove /home/ibarreto/.pyenv/versions/3.8.2/envs/my_venv? y
+xxx@xxx:~$ pyenv activate my_venv
+# Output >>>
+pyenv-virtualenv: version `my_venv' is not a virtualenv
+```
