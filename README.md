@@ -5,8 +5,8 @@ Mas que una guía es un recordatorio de que cosas instalar, algunos archivos de 
 ## Software necesario
 
 1. [Google chrome](https://www.google.com.mx/intl/es-419/chrome/?brand=CHBD&gclid=Cj0KCQjw3qzzBRDnARIsAECmryqQ7s8n6O1T4Sk7xO3EsdhEymfydLbIpk33SQ-heFggNLyB1YjWPqkaApLmEALw_wcB&gclsrc=aw.ds)
-2. [git](https://git-scm.com/download/linux)
-3. [VsCode](https://code.visualstudio.com/docs/setup/linux)
+2. [Git](https://git-scm.com/download/linux)
+3. [Vs Code](https://code.visualstudio.com/docs/setup/linux)
 4. [Inicializar VsCode](###-Inicializar-VsCode)
 5. [Terimator](###-Instalar-y-configurar-Terminator)
 6. [Agregar git status al prompt](###-Agregar-git-status-al-prompt)
@@ -17,8 +17,11 @@ Mas que una guía es un recordatorio de que cosas instalar, algunos archivos de 
 11. [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 12. [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 13. [Docker-compose](https://docs.docker.com/compose/install/)
-14. [Kubernetes]()
-15. []()
+14. [Kubernetes - minikube]()
+15. [Virtualbox](https://www.virtualbox.org/wiki/Linux_Downloads)}
+16. [Vagrant](https://www.vagrantup.com/downloads.html)
+17. [Nodejs y NPM](https://github.com/nodesource/distributions/blob/master/README.md)
+
 ### Instalar git y configurar credenciales
 
 Instalar git
