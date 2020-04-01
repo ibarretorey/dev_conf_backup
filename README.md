@@ -16,14 +16,15 @@ Mas que una guía es un recordatorio de que cosas instalar, algunos archivos de 
 10. [Pyenv - configurar un entorno virtual](####-Usar-pyenv-con-virtualenv)
 11. [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 12. [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-13. [Docker-compose](https://docs.docker.com/compose/install/)
-14. [Kubernetes - minikube]()
-15. [Virtualbox](https://www.virtualbox.org/wiki/Linux_Downloads)}
-16. [Vagrant](https://www.vagrantup.com/downloads.html)
-17. [Nodejs y NPM](https://github.com/nodesource/distributions/blob/master/README.md)
-18. [Crear gif a partir de acciones sobre la pantalla](https://ubunlog.com/peek-gif-animados-ubuntu/)
-19. [Gthumb image crop and resize](https://wiki.gnome.org/Apps/Gthumb)
- 
+13. [Docker-compose](https://docs.docker.com/compose/install/) 
+14. [Kubernetes - minikube](https://kubernetes.io/es/docs/tasks/tools/install-minikube/)
+15. [Kubernetes - kubectl (asegurar instalar, config y tab-tab)](https://kubernetes.io/es/docs/tasks/tools/install-kubectl/)
+16. [Virtualbox](https://www.virtualbox.org/wiki/Linux_Downloads)}
+17. [Vagrant](https://www.vagrantup.com/downloads.html)
+18. [Nodejs y NPM](https://github.com/nodesource/distributions/blob/master/README.md)
+19. [Crear gif a partir de acciones sobre la pantalla](https://ubunlog.com/peek-gif-animados-ubuntu/)
+20. [Gthumb image crop and resize](https://wiki.gnome.org/Apps/Gthumb)
+
 ### Instalar git y configurar credenciales
 
 Instalar git
