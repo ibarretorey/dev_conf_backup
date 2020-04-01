@@ -21,7 +21,9 @@ Mas que una guía es un recordatorio de que cosas instalar, algunos archivos de 
 15. [Virtualbox](https://www.virtualbox.org/wiki/Linux_Downloads)}
 16. [Vagrant](https://www.vagrantup.com/downloads.html)
 17. [Nodejs y NPM](https://github.com/nodesource/distributions/blob/master/README.md)
-
+18. [Crear gif a partir de acciones sobre la pantalla](https://ubunlog.com/peek-gif-animados-ubuntu/)
+19. [Gthumb image crop and resize](https://wiki.gnome.org/Apps/Gthumb)
+ 
 ### Instalar git y configurar credenciales
 
 Instalar git
