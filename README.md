@@ -14,16 +14,17 @@ Mas que una guía es un recordatorio de que cosas instalar, algunos archivos de 
 8. [Pyenv - manage python environments](######-Instalar-y-configurar-Pyenv)
 9. [Pyenv - configurar entorno local y global](####-Configurar-entornos-locales-y-globales)
 10. [Pyenv - configurar un entorno virtual](####-Usar-pyenv-con-virtualenv)
-11. [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
-12. [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-13. [Docker-compose](https://docs.docker.com/compose/install/) 
-14. [Kubernetes - minikube](https://kubernetes.io/es/docs/tasks/tools/install-minikube/)
-15. [Kubernetes - kubectl (asegurar instalar, config y tab-tab)](https://kubernetes.io/es/docs/tasks/tools/install-kubectl/)
-16. [Virtualbox](https://www.virtualbox.org/wiki/Linux_Downloads)}
-17. [Vagrant](https://www.vagrantup.com/downloads.html)
-18. [Nodejs y NPM](https://github.com/nodesource/distributions/blob/master/README.md)
-19. [Crear gif a partir de acciones sobre la pantalla](https://ubunlog.com/peek-gif-animados-ubuntu/)
-20. [Gthumb image crop and resize](https://wiki.gnome.org/Apps/Gthumb)
+11. [Ansible bad option :)](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) 
+12. [Ansible mi opcion favorita] ()
+13. [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+14. [Docker-compose](https://docs.docker.com/compose/install/) 
+15. [Kubernetes - minikube](https://kubernetes.io/es/docs/tasks/tools/install-minikube/)
+16. [Kubernetes - kubectl (asegurar instalar, config y tab-tab)](https://kubernetes.io/es/docs/tasks/tools/install-kubectl/)
+17. [Virtualbox](https://www.virtualbox.org/wiki/Linux_Downloads)}
+18. [Vagrant](https://www.vagrantup.com/downloads.html)
+19. [Nodejs y NPM](https://github.com/nodesource/distributions/blob/master/README.md)
+20. [Crear gif a partir de acciones sobre la pantalla](https://ubunlog.com/peek-gif-animados-ubuntu/)
+21. [Gthumb image crop and resize](https://wiki.gnome.org/Apps/Gthumb)
 
 ### Instalar git y configurar credenciales
 
@@ -257,7 +258,6 @@ pyenv activate <nombre-entorno>
 
 # Para desactivar un entorno
 pyenv deactivate <nombre-entorno>
-
 # Para eliminar un entorno creado
 pyenv uninstall <nombre-entorno>
 
@@ -269,11 +269,27 @@ Requirement already satisfied: setuptools in /home/ibarreto/.pyenv/versions/3.8.
 Requirement already satisfied: pip in /home/ibarreto/.pyenv/versions/3.8.2/envs/my_venv/lib/python3.8/site-packages (19.2.3)
 xxx@xxx:~$ pyenv activate my_venv
 # Output >>>
-(my_venv) pyenv-virtualenv: prompt changing will be removed from future release. configure 'export PYENV_VIRTUALENV_DISABLE_PROMPT=1' to simulate the behavior. 
-xxx@xxx:~$ pyenv uninstall my_venv 
+(my_venv) pyenv-virtualenv: prompt changing will be removed from future release. configure 'export PYENV_VIRTUALENV_DISABLE_PROMPT=1' to simulate the behavior.
+xxx@xxx:~$ pyenv uninstall my_venv
 # Output >>>
 pyenv-virtualenv: remove /home/ibarreto/.pyenv/versions/3.8.2/envs/my_venv? y
 xxx@xxx:~$ pyenv activate my_venv
 # Output >>>
 pyenv-virtualenv: version `my_venv' is not a virtualenv
+```
+
+### Ansible y nwtools
+
+**Requiere previa instalacion de docker**
+Agregar lo siguiente al final de `~/.bashrc` en el caso de linux, cerrar la terminal y al volver a abrir ya tenemos ansible
+
+Tambien se puede ejecutar desde docker directo, nwtools cuenta ademas con vaias herramientas como mysql y posgres client, tcpdump,
+y iptools que puede ejecutar directamente con nwtools si agrego lo siguiente a bashrc, ejemplo de uso `nwtools ping 192.168.1.1`.
+
+```bash
+#Ansible
+alias nwtools='docker run --rm -it -v $PWD:/playbooks -w /playbooks ibarretorey/nwtools'
+alias ansible="docker run --rm -it -v $PWD:/playbooks -w /playbooks ibarretorey/nwtools ansible"
+alias ansible-playbook="docker run --rm -it -v $PWD:/playbooks -w /playbooks ibarretorey/nwtools ansible-playbook"
+alias ansible-galaxy="docker run --rm -it -v $PWD:/playbooks -w /playbooks ibarretorey/nwtools ansible-galaxy"
 ```
